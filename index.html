@@ -1,23 +1,22 @@
-```html
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoConciencia | El Cambio Climático: Nuestro Futuro en Juego</title>
+    <title>EcoConciencia | Cambio Climático</title>
     
     <!-- Google Fonts: Poppins y Open Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome para iconos limpios y modernos -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Configuración de Tailwind con la paleta de colores solicitada -->
+    <!-- Paleta de colores verdes naturales -->
     <script>
         tailwind.config = {
             theme: {
@@ -39,7 +38,7 @@
         }
     </script>
 
-    <!-- Estilos personalizados complementarios (animaciones y transiciones suaves) -->
+    <!-- Estilos personalizados mínimos -->
     <style>
         body {
             background-color: #f4f9f6;
@@ -47,28 +46,19 @@
             font-family: 'Open Sans', sans-serif;
         }
 
-        h1, h2, h3, h4, .font-heading {
+        h1, h2, h3, .font-heading {
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Patrón sutil orgánico para el fondo del Hero */
-        .hero-pattern {
-            background-color: #1b4332;
-            background-image: radial-gradient(circle at 15% 50%, rgba(64, 145, 108, 0.25) 0%, transparent 50%),
-                              radial-gradient(circle at 85% 30%, rgba(45, 106, 79, 0.35) 0%, transparent 55%);
-        }
-
-        /* Transiciones suaves para tarjetas */
         .eco-card {
-            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
         .eco-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 30px -5px rgba(27, 67, 50, 0.12), 0 8px 10px -6px rgba(27, 67, 50, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px -4px rgba(27, 67, 50, 0.12);
         }
 
-        /* Estilo personalizado para el checkbox del checklist */
         .habit-checkbox:checked + div {
             background-color: #d8f3dc;
             border-color: #2d6a4f;
@@ -83,605 +73,256 @@
         .habit-checkbox:checked + div .habit-text {
             text-decoration: line-through;
             color: #2d6a4f;
-            opacity: 0.85;
         }
     </style>
 </head>
 <body class="antialiased selection:bg-salvia selection:text-white">
 
-    <!-- 1. BARRA DE NAVEGACIÓN (NAVBAR) -->
-    <header class="sticky top-0 z-50 bg-fondo-claro/95 backdrop-blur-md border-b border-menta-suave shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo / Título -->
-                <a href="#inicio" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-bosque-oscuro text-menta-suave flex items-center justify-center shadow-md group-hover:bg-esmeralda transition-colors">
-                        <i class="fa-solid fa-leaf text-xl"></i>
-                    </div>
-                    <span class="font-heading font-bold text-2xl text-bosque-oscuro tracking-tight">
-                        Eco<span class="text-salvia">Conciencia</span>
-                    </span>
-                </a>
-
-                <!-- Enlaces de navegación (Escritorio) -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="font-heading font-semibold text-sm text-texto-oscuro hover:text-salvia transition-colors py-2">Inicio</a>
-                    <a href="#causas" class="font-heading font-semibold text-sm text-texto-oscuro hover:text-salvia transition-colors py-2">Causas</a>
-                    <a href="#consecuencias" class="font-heading font-semibold text-sm text-texto-oscuro hover:text-salvia transition-colors py-2">Consecuencias</a>
-                    <a href="#soluciones" class="font-heading font-semibold text-sm text-texto-oscuro hover:text-salvia transition-colors py-2">Soluciones</a>
-                </nav>
-
-                <!-- Botón CTA rápido (Escritorio) -->
-                <div class="hidden md:block">
-                    <a href="#soluciones" class="inline-flex items-center gap-2 bg-esmeralda hover:bg-bosque-oscuro text-white font-heading font-semibold text-sm px-5 py-2.5 rounded-full transition-all shadow-sm hover:shadow">
-                        <span>Actúa Hoy</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-
-                <!-- Botón Menú Móvil -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" aria-label="Abrir menú" class="p-2.5 rounded-xl text-bosque-oscuro hover:bg-menta-suave focus:outline-none transition-colors">
-                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
-                    </button>
-                </div>
-            </div>
+    <!-- BARRA SUPERIOR DE AUTORES (Muy arriba, letra chiquita 0.75rem) -->
+    <div class="bg-bosque-oscuro text-menta-suave/90 border-b border-esmeralda/50">
+        <div class="max-w-5xl mx-auto px-4 py-1 flex justify-end items-center">
+            <span class="text-xs tracking-wide font-medium" style="font-size: 0.75rem;">
+                Autores: Edgar y Juan
+            </span>
         </div>
+    </div>
 
-        <!-- Menú Desplegable Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-menta-suave px-4 pt-2 pb-6 space-y-2 shadow-lg">
-            <a href="#inicio" class="mobile-link block px-4 py-3 rounded-xl font-heading font-semibold text-texto-oscuro hover:bg-menta-suave hover:text-bosque-oscuro transition-colors">Inicio</a>
-            <a href="#causas" class="mobile-link block px-4 py-3 rounded-xl font-heading font-semibold text-texto-oscuro hover:bg-menta-suave hover:text-bosque-oscuro transition-colors">Causas Principales</a>
-            <a href="#consecuencias" class="mobile-link block px-4 py-3 rounded-xl font-heading font-semibold text-texto-oscuro hover:bg-menta-suave hover:text-bosque-oscuro transition-colors">Consecuencias</a>
-            <a href="#soluciones" class="mobile-link block px-4 py-3 rounded-xl font-heading font-semibold text-texto-oscuro hover:bg-menta-suave hover:text-bosque-oscuro transition-colors">Soluciones y Acción</a>
+    <!-- BARRA DE NAVEGACIÓN COMPACTA -->
+    <header class="sticky top-0 z-50 bg-fondo-claro/95 backdrop-blur-md border-b border-menta-suave">
+        <div class="max-w-5xl mx-auto px-4 h-14 flex justify-between items-center">
+            <a href="#inicio" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-bosque-oscuro text-menta-suave flex items-center justify-center">
+                    <i class="fa-solid fa-leaf text-sm"></i>
+                </div>
+                <span class="font-heading font-bold text-lg text-bosque-oscuro">
+                    Eco<span class="text-salvia">Conciencia</span>
+                </span>
+            </a>
+
+            <nav class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-heading font-semibold text-texto-oscuro">
+                <a href="#causas" class="hover:text-salvia transition-colors">Causas</a>
+                <a href="#consecuencias" class="hover:text-salvia transition-colors">Impactos</a>
+                <a href="#acciones" class="bg-esmeralda hover:bg-bosque-oscuro text-white px-3.5 py-1.5 rounded-full transition-colors">
+                    Actúa
+                </a>
+            </nav>
         </div>
     </header>
 
-    <!-- 2. SECCIÓN HERO (#inicio) -->
-    <section id="inicio" class="hero-pattern relative overflow-hidden text-white pt-16 pb-28 md:pt-24 md:pb-36">
-        <!-- Elementos decorativos sutiles -->
-        <div class="absolute -bottom-1 left-0 right-0">
-            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-                <path d="M0 80H1440V30C1200 75 960 0 720 30C480 60 240 10 0 45V80Z" fill="#f4f9f6"/>
-            </svg>
-        </div>
+    <!-- HERO COMPACTO -->
+    <section id="inicio" class="bg-bosque-oscuro text-white py-10 sm:py-14">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <span class="inline-block px-3 py-0.5 rounded-full bg-esmeralda text-menta-suave text-xs font-semibold mb-3">
+                <i class="fa-solid fa-earth-americas mr-1"></i> Cuidemos Nuestro Planeta
+            </span>
+            <h1 class="font-heading font-bold text-2xl sm:text-4xl leading-tight mb-3">
+                El Cambio Climático: <span class="text-menta-suave">Nuestro Futuro en Juego</span>
+            </h1>
+            <p class="text-sm sm:text-base text-menta-suave/90 max-w-2xl mx-auto mb-6 leading-relaxed">
+                El calentamiento global es la alteración de las temperaturas y patrones climáticos de la Tierra causada principalmente por la actividad humana. Conoce sus efectos y cómo frenarlo.
+            </p>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl mx-auto text-center">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-esmeralda/80 border border-salvia/50 text-menta-suave text-xs sm:text-sm font-semibold mb-6">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    <span>Emergencia Ambiental Global</span>
+            <!-- Mini fila de datos clave -->
+            <div class="grid grid-cols-3 gap-3 max-w-2xl mx-auto pt-2">
+                <div class="bg-esmeralda/50 border border-salvia/40 rounded-xl p-3">
+                    <span class="font-heading font-bold text-lg sm:text-2xl text-menta-suave block">+1.1 °C</span>
+                    <span class="text-xs text-white/80">Temperatura global</span>
                 </div>
-                
-                <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl leading-tight mb-6 tracking-tight">
-                    El Cambio Climático: <span class="text-menta-suave block sm:inline">Nuestro Futuro en Juego</span>
-                </h1>
-                
-                <p class="text-base sm:text-lg md:text-xl text-menta-suave/90 leading-relaxed mb-10 font-normal">
-                    El calentamiento global es la alteración a largo plazo de las temperaturas y los patrones climáticos de la Tierra, impulsada principalmente por la actividad humana. Comprender sus causas es el primer paso para proteger nuestro único hogar.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#soluciones" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-menta-suave hover:bg-white text-bosque-oscuro font-heading font-bold text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
-                        <span>Descubre cómo ayudar</span>
-                        <i class="fa-solid fa-seedling text-esmeralda"></i>
-                    </a>
-                    <a href="#causas" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent hover:bg-esmeralda/50 text-white border-2 border-menta-suave/40 font-heading font-semibold text-base px-8 py-3.5 rounded-full transition-colors">
-                        <span>Explorar datos</span>
-                    </a>
+                <div class="bg-esmeralda/50 border border-salvia/40 rounded-xl p-3">
+                    <span class="font-heading font-bold text-lg sm:text-2xl text-menta-suave block">+20 cm</span>
+                    <span class="text-xs text-white/80">Nivel del mar</span>
+                </div>
+                <div class="bg-esmeralda/50 border border-salvia/40 rounded-xl p-3">
+                    <span class="font-heading font-bold text-lg sm:text-2xl text-menta-suave block">-45 %</span>
+                    <span class="text-xs text-white/80">Meta CO₂ 2030</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. SECCIÓN DE DATOS CLAVE (ESTADÍSTICAS) -->
-    <section aria-label="Datos clave sobre el cambio climático" class="relative z-20 -mt-12 sm:-mt-16 pb-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                
-                <!-- Tarjeta Estadística 1 -->
-                <div class="eco-card bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-menta-suave flex flex-col items-center text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-menta-suave text-bosque-oscuro flex items-center justify-center mb-4 text-2xl">
-                        <i class="fa-solid fa-temperature-arrow-up"></i>
-                    </div>
-                    <span class="font-heading font-extrabold text-4xl sm:text-5xl text-bosque-oscuro mb-2">+1.1 °C</span>
-                    <h2 class="font-heading font-bold text-lg text-esmeralda mb-2">Aumento de Temperatura</h2>
-                    <p class="text-sm text-texto-oscuro/80 leading-relaxed">
-                        La temperatura media mundial ya es 1.1 °C superior a la de la era preindustrial, acercándose al límite crítico de 1.5 °C.
-                    </p>
-                </div>
+    <!-- CONTENIDO PRINCIPAL EN UNA COLUMNA COMPACTA -->
+    <main class="max-w-5xl mx-auto px-4 py-8 sm:py-10 space-y-10">
 
-                <!-- Tarjeta Estadística 2 -->
-                <div class="eco-card bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-menta-suave flex flex-col items-center text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-menta-suave text-bosque-oscuro flex items-center justify-center mb-4 text-2xl">
-                        <i class="fa-solid fa-water"></i>
-                    </div>
-                    <span class="font-heading font-extrabold text-4xl sm:text-5xl text-bosque-oscuro mb-2">+20 cm</span>
-                    <h2 class="font-heading font-bold text-lg text-esmeralda mb-2">Nivel del Mar</h2>
-                    <p class="text-sm text-texto-oscuro/80 leading-relaxed">
-                        El nivel medio global del mar ha subido unos 20 centímetros desde 1900 debido al deshielo y la expansión térmica del océano.
-                    </p>
-                </div>
-
-                <!-- Tarjeta Estadística 3 -->
-                <div class="eco-card bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-menta-suave flex flex-col items-center text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-menta-suave text-bosque-oscuro flex items-center justify-center mb-4 text-2xl">
-                        <i class="fa-solid fa-cloud-arrow-down"></i>
-                    </div>
-                    <span class="font-heading font-extrabold text-4xl sm:text-5xl text-bosque-oscuro mb-2">-45 %</span>
-                    <h2 class="font-heading font-bold text-lg text-esmeralda mb-2">Meta de Emisiones</h2>
-                    <p class="text-sm text-texto-oscuro/80 leading-relaxed">
-                        Es necesario reducir las emisiones globales de gases de efecto invernadero en un 45% para 2030 y alcanzar el cero neto en 2050.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. SECCIÓN DE CAUSAS PRINCIPALES (#causas) -->
-    <section id="causas" class="py-16 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Encabezado de sección -->
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="text-salvia font-heading font-bold text-sm uppercase tracking-wider">El Origen del Problema</span>
-                <h2 class="font-heading font-bold text-3xl sm:text-4xl text-bosque-oscuro mt-2 mb-4">Causas Principales del Calentamiento Global</h2>
-                <p class="text-texto-oscuro/85 text-base sm:text-lg">
-                    Las actividades humanas han intensificado el efecto invernadero natural, atrapando más calor en la atmósfera de lo que el planeta puede regular.
-                </p>
+        <!-- SECCIÓN 1: CAUSAS PRINCIPALES (3 Tarjetas breves) -->
+        <section id="causas">
+            <div class="mb-4">
+                <h2 class="font-heading font-bold text-xl sm:text-2xl text-bosque-oscuro">
+                    <i class="fa-solid fa-smog text-salvia mr-2"></i>Causas Principales
+                </h2>
+                <p class="text-xs sm:text-sm text-texto-oscuro/75">Actividades humanas que intensifican el efecto invernadero.</p>
             </div>
 
-            <!-- Cuadrícula de 4 tarjetas -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                
-                <!-- Causa 1: Combustibles Fósiles -->
-                <article class="eco-card bg-white rounded-2xl p-6 shadow-sm border border-menta-suave flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-bosque-oscuro text-menta-suave flex items-center justify-center text-xl mb-5">
-                            <i class="fa-solid fa-fire-flame-curved"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-xl text-bosque-oscuro mb-3">Combustibles Fósiles</h3>
-                        <p class="text-sm text-texto-oscuro/80 leading-relaxed">
-                            La quema de carbón, petróleo y gas para generar electricidad y calor representa más del 75% de las emisiones mundiales de gases de efecto invernadero.
-                        </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <article class="eco-card bg-white rounded-xl p-5 border border-menta-suave shadow-sm">
+                    <div class="w-9 h-9 rounded-lg bg-bosque-oscuro text-menta-suave flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-fondo-claro flex items-center text-xs font-semibold text-salvia">
-                        <i class="fa-solid fa-smog mr-2"></i>
-                        <span>Mayor fuente de CO₂</span>
-                    </div>
+                    <h3 class="font-heading font-bold text-base text-bosque-oscuro mb-1.5">Combustibles Fósiles</h3>
+                    <p class="text-xs sm:text-sm text-texto-oscuro/80 leading-relaxed">
+                        La quema de carbón, petróleo y gas para energía y transporte genera más del 75% de los gases de efecto invernadero.
+                    </p>
                 </article>
 
-                <!-- Causa 2: Deforestación -->
-                <article class="eco-card bg-white rounded-2xl p-6 shadow-sm border border-menta-suave flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-esmeralda text-white flex items-center justify-center text-xl mb-5">
-                            <i class="fa-solid fa-tree"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-xl text-bosque-oscuro mb-3">Deforestación y Tala</h3>
-                        <p class="text-sm text-texto-oscuro/80 leading-relaxed">
-                            Los bosques absorben dióxido de carbono. Al talarlos para agricultura o urbanización, se libera el carbono almacenado y se reduce la capacidad natural de limpieza del planeta.
-                        </p>
+                <article class="eco-card bg-white rounded-xl p-5 border border-menta-suave shadow-sm">
+                    <div class="w-9 h-9 rounded-lg bg-esmeralda text-white flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-tree"></i>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-fondo-claro flex items-center text-xs font-semibold text-salvia">
-                        <i class="fa-solid fa-leaf mr-2"></i>
-                        <span>Pérdida de sumideros</span>
-                    </div>
+                    <h3 class="font-heading font-bold text-base text-bosque-oscuro mb-1.5">Deforestación</h3>
+                    <p class="text-xs sm:text-sm text-texto-oscuro/80 leading-relaxed">
+                        La tala de bosques libera el carbono almacenado y reduce la capacidad natural del planeta para absorber CO₂.
+                    </p>
                 </article>
 
-                <!-- Causa 3: Industria y Agricultura -->
-                <article class="eco-card bg-white rounded-2xl p-6 shadow-sm border border-menta-suave flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-salvia text-white flex items-center justify-center text-xl mb-5">
-                            <i class="fa-solid fa-industry"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-xl text-bosque-oscuro mb-3">Industria y Agricultura</h3>
-                        <p class="text-sm text-texto-oscuro/80 leading-relaxed">
-                            La producción de cemento, acero y plásticos libera enormes cantidades de gases, mientras que la ganadería intensiva y los fertilizantes emiten metano y óxido nitroso.
-                        </p>
+                <article class="eco-card bg-white rounded-xl p-5 border border-menta-suave shadow-sm">
+                    <div class="w-9 h-9 rounded-lg bg-salvia text-white flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-industry"></i>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-fondo-claro flex items-center text-xs font-semibold text-salvia">
-                        <i class="fa-solid fa-wheat-awn mr-2"></i>
-                        <span>Emisiones de metano</span>
+                    <h3 class="font-heading font-bold text-base text-bosque-oscuro mb-1.5">Industria y Consumo</h3>
+                    <p class="text-xs sm:text-sm text-texto-oscuro/80 leading-relaxed">
+                        La producción masiva, la ganadería intensiva y los residuos plásticos emiten grandes cantidades de metano y óxido nitroso.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: CONSECUENCIAS (3 Tarjetas breves) -->
+        <section id="consecuencias">
+            <div class="mb-4">
+                <h2 class="font-heading font-bold text-xl sm:text-2xl text-bosque-oscuro">
+                    <i class="fa-solid fa-temperature-high text-salvia mr-2"></i>Consecuencias Visibles
+                </h2>
+                <p class="text-xs sm:text-sm text-texto-oscuro/75">Impactos que ya transforman nuestros ecosistemas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <article class="eco-card bg-menta-suave/40 rounded-xl p-5 border border-menta-suave">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fa-solid fa-icicles text-esmeralda text-lg"></i>
+                        <h3 class="font-heading font-bold text-base text-bosque-oscuro">Deshielo Polar</h3>
                     </div>
+                    <p class="text-xs sm:text-sm text-texto-oscuro/80 leading-relaxed">
+                        Los glaciares retroceden aceleradamente, elevando el nivel del mar y amenazando zonas costeras.
+                    </p>
                 </article>
 
-                <!-- Causa 4: Transporte -->
-                <article class="eco-card bg-white rounded-2xl p-6 shadow-sm border border-menta-suave flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-menta-suave text-bosque-oscuro flex items-center justify-center text-xl mb-5">
-                            <i class="fa-solid fa-car-side"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-xl text-bosque-oscuro mb-3">Transporte Contaminante</h3>
-                        <p class="text-sm text-texto-oscuro/80 leading-relaxed">
-                            La mayoría de los automóviles, camiones, barcos y aviones funcionan con derivados del petróleo, convirtiendo al transporte en responsable de casi un cuarto de las emisiones globales.
-                        </p>
+                <article class="eco-card bg-menta-suave/40 rounded-xl p-5 border border-menta-suave">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fa-solid fa-cloud-bolt text-esmeralda text-lg"></i>
+                        <h3 class="font-heading font-bold text-base text-bosque-oscuro">Clima Extremo</h3>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-fondo-claro flex items-center text-xs font-semibold text-salvia">
-                        <i class="fa-solid fa-gas-pump mr-2"></i>
-                        <span>Dependencia petrolera</span>
-                    </div>
+                    <p class="text-xs sm:text-sm text-texto-oscuro/80 leading-relaxed">
+                        Olas de calor más intensas, sequías prolongadas, incendios forestales y huracanes más frecuentes.
+                    </p>
                 </article>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. SECCIÓN DE CONSECUENCIAS (#consecuencias) -->
-    <section id="consecuencias" class="py-16 sm:py-24 bg-menta-suave/40 border-y border-menta-suave">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6">
-                <div class="max-w-2xl">
-                    <span class="text-esmeralda font-heading font-bold text-sm uppercase tracking-wider">Impactos Visibles</span>
-                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-bosque-oscuro mt-2">Consecuencias en Nuestro Entorno</h2>
-                </div>
-                <p class="text-texto-oscuro/85 text-base max-w-md">
-                    El cambio climático no es un problema del futuro; sus efectos ya transforman los ecosistemas y la vida cotidiana en todo el mundo.
-                </p>
-            </div>
-
-            <!-- Cuadrícula de 4 tarjetas de consecuencias -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                
-                <!-- Consecuencia 1 -->
-                <div class="eco-card bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-menta-suave flex items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-fondo-claro border border-menta-suave text-esmeralda flex items-center justify-center text-2xl shrink-0">
-                        <i class="fa-solid fa-icicles"></i>
+                <article class="eco-card bg-menta-suave/40 rounded-xl p-5 border border-menta-suave">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fa-solid fa-paw text-esmeralda text-lg"></i>
+                        <h3 class="font-heading font-bold text-base text-bosque-oscuro">Biodiversidad en Riesgo</h3>
                     </div>
-                    <div>
-                        <h3 class="font-heading font-bold text-xl text-bosque-oscuro mb-2">Derretimiento de Glaciares y Polos</h3>
-                        <p class="text-sm sm:text-base text-texto-oscuro/80 leading-relaxed">
-                            Las capas de hielo en Groenlandia, la Antártida y los glaciares de montaña retroceden a velocidades récord, amenazando a comunidades costeras e islas con el aumento del nivel del mar.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Consecuencia 2 -->
-                <div class="eco-card bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-menta-suave flex items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-fondo-claro border border-menta-suave text-esmeralda flex items-center justify-center text-2xl shrink-0">
-                        <i class="fa-solid fa-cloud-bolt"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-heading font-bold text-xl text-bosque-oscuro mb-2">Fenómenos Meteorológicos Extremos</h3>
-                        <p class="text-sm sm:text-base text-texto-oscuro/80 leading-relaxed">
-                            Olas de calor más intensas, huracanes devastadores, lluvias torrenciales e incendios forestales prolongados se vuelven cada vez más frecuentes y destructivos.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Consecuencia 3 -->
-                <div class="eco-card bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-menta-suave flex items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-fondo-claro border border-menta-suave text-esmeralda flex items-center justify-center text-2xl shrink-0">
-                        <i class="fa-solid fa-paw"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-heading font-bold text-xl text-bosque-oscuro mb-2">Pérdida de Biodiversidad</h3>
-                        <p class="text-sm sm:text-base text-texto-oscuro/80 leading-relaxed">
-                            Muchos animales y plantas no logran adaptarse tan rápido a los cambios de temperatura. Los arrecifes de coral sufren blanqueamiento masivo y miles de especies enfrentan riesgo de extinción.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Consecuencia 4 -->
-                <div class="eco-card bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-menta-suave flex items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-fondo-claro border border-menta-suave text-esmeralda flex items-center justify-center text-2xl shrink-0">
-                        <i class="fa-solid fa-droplet-slash"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-heading font-bold text-xl text-bosque-oscuro mb-2">Escasez de Agua y Alimentos</h3>
-                        <p class="text-sm sm:text-base text-texto-oscuro/80 leading-relaxed">
-                            Las sequías prolongadas reducen la disponibilidad de agua dulce y afectan las cosechas agrícolas, provocando inseguridad alimentaria en las regiones más vulnerables del planeta.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. SECCIÓN DE SOLUCIONES Y ACCIÓN (#soluciones) -->
-    <section id="soluciones" class="py-16 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Encabezado -->
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="text-salvia font-heading font-bold text-sm uppercase tracking-wider">Es Momento de Actuar</span>
-                <h2 class="font-heading font-bold text-3xl sm:text-4xl text-bosque-oscuro mt-2 mb-4">Soluciones Globales y Acción Individual</h2>
-                <p class="text-texto-oscuro/85 text-base sm:text-lg">
-                    Frenar el cambio climático requiere políticas ambiciosas a gran escala, pero nuestras decisiones diarias multiplicadas por millones generan un cambio real.
-                </p>
-            </div>
-
-            <!-- Soluciones a Nivel Global -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                <div class="eco-card bg-bosque-oscuro text-white rounded-2xl p-7 shadow-md">
-                    <div class="w-12 h-12 rounded-xl bg-salvia/30 text-menta-suave flex items-center justify-center text-xl mb-5">
-                        <i class="fa-solid fa-solar-panel"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-xl mb-3 text-menta-suave">Energías Renovables</h3>
-                    <p class="text-sm text-white/85 leading-relaxed">
-                        Acelerar la transición hacia la energía solar, eólica e hidroeléctrica para sustituir los combustibles fósiles en la generación eléctrica mundial.
+                    <p class="text-xs sm:text-sm text-texto-oscuro/80 leading-relaxed">
+                        Miles de especies animales y vegetales pierden su hábitat al no poder adaptarse rápido al calor.
                     </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: ACCIONES Y CHECKLIST INTERACTIVO -->
+        <section id="acciones" class="bg-white rounded-2xl p-5 sm:p-7 border border-menta-suave shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+                <div>
+                    <h2 class="font-heading font-bold text-xl text-bosque-oscuro">
+                        <i class="fa-solid fa-seedling text-salvia mr-2"></i>¿Cómo Puedes Ayudar?
+                    </h2>
+                    <p class="text-xs sm:text-sm text-texto-oscuro/75">Marca los hábitos que aplicas para reducir tu huella ecológica:</p>
                 </div>
 
-                <div class="eco-card bg-esmeralda text-white rounded-2xl p-7 shadow-md">
-                    <div class="w-12 h-12 rounded-xl bg-bosque-oscuro/40 text-menta-suave flex items-center justify-center text-xl mb-5">
-                        <i class="fa-solid fa-seedling"></i>
+                <!-- Barra de progreso sencilla -->
+                <div class="bg-fondo-claro px-4 py-2.5 rounded-xl border border-menta-suave min-w-[210px]">
+                    <div class="flex justify-between items-center text-xs font-heading font-bold mb-1">
+                        <span class="text-bosque-oscuro">Tu Eco-Progreso</span>
+                        <span id="progress-percentage" class="text-esmeralda">0%</span>
                     </div>
-                    <h3 class="font-heading font-bold text-xl mb-3 text-menta-suave">Reforestación Masiva</h3>
-                    <p class="text-sm text-white/85 leading-relaxed">
-                        Proteger los bosques primarios existentes y restaurar millones de hectáreas de ecosistemas degradados para capturar carbono de forma natural.
-                    </p>
-                </div>
-
-                <div class="eco-card bg-salvia text-white rounded-2xl p-7 shadow-md">
-                    <div class="w-12 h-12 rounded-xl bg-bosque-oscuro/30 text-menta-suave flex items-center justify-center text-xl mb-5">
-                        <i class="fa-solid fa-recycle"></i>
+                    <div class="w-full bg-menta-suave rounded-full h-2 overflow-hidden">
+                        <div id="progress-bar" class="bg-esmeralda h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
                     </div>
-                    <h3 class="font-heading font-bold text-xl mb-3 text-menta-suave">Economía Circular</h3>
-                    <p class="text-sm text-white/85 leading-relaxed">
-                        Rediseñar los procesos industriales para eliminar residuos, fomentar la reparación y reutilizar materiales continuamente.
-                    </p>
                 </div>
             </div>
 
-            <!-- Checklist Interactivo de Hábitos Ecológicos (Acción Individual) -->
-            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-menta-suave">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
-                    <!-- Columna Izquierda: Explicación y Barra de Progreso -->
-                    <div class="lg:col-span-5 space-y-5">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-menta-suave text-bosque-oscuro text-xs font-bold">
-                            <i class="fa-solid fa-list-check"></i>
-                            <span>Tu Compromiso Diario</span>
+            <!-- Grid compacto de 4 hábitos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="cursor-pointer select-none">
+                    <input type="checkbox" class="habit-checkbox sr-only" data-habit="1">
+                    <div class="p-3 rounded-xl border border-menta-suave bg-fondo-claro/60 hover:border-salvia transition-all flex items-center gap-3">
+                        <div class="check-icon w-5 h-5 rounded border border-salvia flex items-center justify-center text-transparent shrink-0">
+                            <i class="fa-solid fa-check text-[10px]"></i>
                         </div>
-                        <h3 class="font-heading font-bold text-2xl sm:text-3xl text-bosque-oscuro leading-snug">
-                            Checklist de Hábitos Ecológicos
-                        </h3>
-                        <p class="text-sm sm:text-base text-texto-oscuro/80 leading-relaxed">
-                            Marca las acciones que ya realizas o te comprometes a adoptar esta semana para reducir tu huella de carbono personal.
-                        </p>
+                        <span class="habit-text text-xs sm:text-sm font-medium text-bosque-oscuro">Ahorrar energía apagando luces y equipos en desuso.</span>
+                    </div>
+                </label>
 
-                        <!-- Medidor de impacto -->
-                        <div class="bg-fondo-claro p-5 rounded-2xl border border-menta-suave">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-heading font-semibold text-sm text-bosque-oscuro">Nivel de Eco-Compromiso</span>
-                                <span id="progress-percentage" class="font-heading font-bold text-lg text-esmeralda">0%</span>
-                            </div>
-                            <div class="w-full bg-menta-suave rounded-full h-3 overflow-hidden">
-                                <div id="progress-bar" class="bg-esmeralda h-3 rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
-                            </div>
-                            <p id="progress-message" class="text-xs text-salvia font-semibold mt-3">
-                                ¡Selecciona tu primer hábito para comenzar!
-                            </p>
+                <label class="cursor-pointer select-none">
+                    <input type="checkbox" class="habit-checkbox sr-only" data-habit="2">
+                    <div class="p-3 rounded-xl border border-menta-suave bg-fondo-claro/60 hover:border-salvia transition-all flex items-center gap-3">
+                        <div class="check-icon w-5 h-5 rounded border border-salvia flex items-center justify-center text-transparent shrink-0">
+                            <i class="fa-solid fa-check text-[10px]"></i>
                         </div>
-
-                        <button id="reset-habits-btn" type="button" class="text-xs font-semibold text-salvia hover:text-bosque-oscuro underline transition-colors">
-                            Reiniciar selección
-                        </button>
+                        <span class="habit-text text-xs sm:text-sm font-medium text-bosque-oscuro">Caminar, usar bicicleta o transporte público.</span>
                     </div>
+                </label>
 
-                    <!-- Columna Derecha: Lista interactiva -->
-                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                        
-                        <!-- Hábito 1 -->
-                        <label class="cursor-pointer block select-none">
-                            <input type="checkbox" class="habit-checkbox sr-only" data-habit="1">
-                            <div class="p-4 rounded-2xl border-2 border-menta-suave/70 bg-fondo-claro/50 hover:border-salvia transition-all flex items-start gap-3.5 h-full">
-                                <div class="check-icon w-6 h-6 rounded-lg border-2 border-salvia flex items-center justify-center text-transparent shrink-0 mt-0.5 transition-colors">
-                                    <i class="fa-solid fa-check text-xs"></i>
-                                </div>
-                                <div>
-                                    <span class="habit-text font-heading font-semibold text-sm text-bosque-oscuro block">Ahorro Energético</span>
-                                    <span class="text-xs text-texto-oscuro/75 mt-1 block">Apagar luces innecesarias y desconectar aparatos en reposo.</span>
-                                </div>
-                            </div>
-                        </label>
-
-                        <!-- Hábito 2 -->
-                        <label class="cursor-pointer block select-none">
-                            <input type="checkbox" class="habit-checkbox sr-only" data-habit="2">
-                            <div class="p-4 rounded-2xl border-2 border-menta-suave/70 bg-fondo-claro/50 hover:border-salvia transition-all flex items-start gap-3.5 h-full">
-                                <div class="check-icon w-6 h-6 rounded-lg border-2 border-salvia flex items-center justify-center text-transparent shrink-0 mt-0.5 transition-colors">
-                                    <i class="fa-solid fa-check text-xs"></i>
-                                </div>
-                                <div>
-                                    <span class="habit-text font-heading font-semibold text-sm text-bosque-oscuro block">Movilidad Sostenible</span>
-                                    <span class="text-xs text-texto-oscuro/75 mt-1 block">Caminar, usar bicicleta o transporte público en trayectos cortos.</span>
-                                </div>
-                            </div>
-                        </label>
-
-                        <!-- Hábito 3 -->
-                        <label class="cursor-pointer block select-none">
-                            <input type="checkbox" class="habit-checkbox sr-only" data-habit="3">
-                            <div class="p-4 rounded-2xl border-2 border-menta-suave/70 bg-fondo-claro/50 hover:border-salvia transition-all flex items-start gap-3.5 h-full">
-                                <div class="check-icon w-6 h-6 rounded-lg border-2 border-salvia flex items-center justify-center text-transparent shrink-0 mt-0.5 transition-colors">
-                                    <i class="fa-solid fa-check text-xs"></i>
-                                </div>
-                                <div>
-                                    <span class="habit-text font-heading font-semibold text-sm text-bosque-oscuro block">Reducir, Reutilizar, Reciclar</span>
-                                    <span class="text-xs text-texto-oscuro/75 mt-1 block">Evitar plásticos de un solo uso y separar residuos correctamente.</span>
-                                </div>
-                            </div>
-                        </label>
-
-                        <!-- Hábito 4 -->
-                        <label class="cursor-pointer block select-none">
-                            <input type="checkbox" class="habit-checkbox sr-only" data-habit="4">
-                            <div class="p-4 rounded-2xl border-2 border-menta-suave/70 bg-fondo-claro/50 hover:border-salvia transition-all flex items-start gap-3.5 h-full">
-                                <div class="check-icon w-6 h-6 rounded-lg border-2 border-salvia flex items-center justify-center text-transparent shrink-0 mt-0.5 transition-colors">
-                                    <i class="fa-solid fa-check text-xs"></i>
-                                </div>
-                                <div>
-                                    <span class="habit-text font-heading font-semibold text-sm text-bosque-oscuro block">Consumo Responsable</span>
-                                    <span class="text-xs text-texto-oscuro/75 mt-1 block">Priorizar alimentos locales de temporada y reducir el desperdicio.</span>
-                                </div>
-                            </div>
-                        </label>
-
-                        <!-- Hábito 5 -->
-                        <label class="cursor-pointer block select-none">
-                            <input type="checkbox" class="habit-checkbox sr-only" data-habit="5">
-                            <div class="p-4 rounded-2xl border-2 border-menta-suave/70 bg-fondo-claro/50 hover:border-salvia transition-all flex items-start gap-3.5 h-full">
-                                <div class="check-icon w-6 h-6 rounded-lg border-2 border-salvia flex items-center justify-center text-transparent shrink-0 mt-0.5 transition-colors">
-                                    <i class="fa-solid fa-check text-xs"></i>
-                                </div>
-                                <div>
-                                    <span class="habit-text font-heading font-semibold text-sm text-bosque-oscuro block">Cuidado del Agua</span>
-                                    <span class="text-xs text-texto-oscuro/75 mt-1 block">Tomar duchas breves y cerrar el grifo al cepillarse los dientes.</span>
-                                </div>
-                            </div>
-                        </label>
-
-                        <!-- Hábito 6 -->
-                        <label class="cursor-pointer block select-none">
-                            <input type="checkbox" class="habit-checkbox sr-only" data-habit="6">
-                            <div class="p-4 rounded-2xl border-2 border-menta-suave/70 bg-fondo-claro/50 hover:border-salvia transition-all flex items-start gap-3.5 h-full">
-                                <div class="check-icon w-6 h-6 rounded-lg border-2 border-salvia flex items-center justify-center text-transparent shrink-0 mt-0.5 transition-colors">
-                                    <i class="fa-solid fa-check text-xs"></i>
-                                </div>
-                                <div>
-                                    <span class="habit-text font-heading font-semibold text-sm text-bosque-oscuro block">Educar y Compartir</span>
-                                    <span class="text-xs text-texto-oscuro/75 mt-1 block">Informar a familiares y amigos sobre la importancia de cuidar el clima.</span>
-                                </div>
-                            </div>
-                        </label>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. PIE DE PÁGINA (FOOTER) -->
-    <footer class="bg-bosque-oscuro text-menta-suave pt-14 pb-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-10 border-b border-esmeralda">
-                <!-- Marca -->
-                <div class="text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start gap-3 mb-3">
-                        <div class="w-9 h-9 rounded-lg bg-salvia text-white flex items-center justify-center">
-                            <i class="fa-solid fa-leaf"></i>
+                <label class="cursor-pointer select-none">
+                    <input type="checkbox" class="habit-checkbox sr-only" data-habit="3">
+                    <div class="p-3 rounded-xl border border-menta-suave bg-fondo-claro/60 hover:border-salvia transition-all flex items-center gap-3">
+                        <div class="check-icon w-5 h-5 rounded border border-salvia flex items-center justify-center text-transparent shrink-0">
+                            <i class="fa-solid fa-check text-[10px]"></i>
                         </div>
-                        <span class="font-heading font-bold text-2xl text-white">EcoConciencia</span>
+                        <span class="habit-text text-xs sm:text-sm font-medium text-bosque-oscuro">Reducir plásticos de un solo uso y reciclar.</span>
                     </div>
-                    <p class="text-sm text-menta-suave/80 max-w-md italic">
-                        "No heredamos la Tierra de nuestros ancestros, la tomamos prestada de nuestros hijos."
-                    </p>
-                </div>
+                </label>
 
-                <!-- Enlaces rápidos -->
-                <div class="flex flex-wrap justify-center gap-6 text-sm font-heading font-semibold">
-                    <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
-                    <a href="#causas" class="hover:text-white transition-colors">Causas</a>
-                    <a href="#consecuencias" class="hover:text-white transition-colors">Consecuencias</a>
-                    <a href="#soluciones" class="hover:text-white transition-colors">Soluciones</a>
-                </div>
+                <label class="cursor-pointer select-none">
+                    <input type="checkbox" class="habit-checkbox sr-only" data-habit="4">
+                    <div class="p-3 rounded-xl border border-menta-suave bg-fondo-claro/60 hover:border-salvia transition-all flex items-center gap-3">
+                        <div class="check-icon w-5 h-5 rounded border border-salvia flex items-center justify-center text-transparent shrink-0">
+                            <i class="fa-solid fa-check text-[10px]"></i>
+                        </div>
+                        <span class="habit-text text-xs sm:text-sm font-medium text-bosque-oscuro">Cuidar el agua y preferir productos locales.</span>
+                    </div>
+                </label>
             </div>
+        </section>
 
-            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-menta-suave/70 gap-4">
-                <p>&copy; 2026 EcoConciencia. Recurso educativo para la sensibilización ambiental.</p>
-                <p class="flex items-center gap-1.5">
-                    <span>Hecho con</span>
-                    <i class="fa-solid fa-heart text-salvia"></i>
-                    <span>por un planeta más verde</span>
-                </p>
+    </main>
+
+    <!-- PIE DE PÁGINA COMPACTO -->
+    <footer class="bg-bosque-oscuro text-menta-suave py-6 mt-6">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs">
+            <div class="flex items-center gap-2 font-heading font-bold text-white">
+                <i class="fa-solid fa-leaf text-salvia"></i>
+                <span>EcoConciencia</span>
             </div>
+            <p class="text-menta-suave/80 text-center">Cuidar la Tierra es cuidar nuestro futuro.</p>
+            <span class="text-menta-suave/70">Autores: Edgar y Juan</span>
         </div>
     </footer>
 
-    <!-- Script de interactividad (Menú móvil y Checklist ecológico) -->
+    <!-- Script mínimo para el progreso del checklist -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- 1. Lógica del Menú Móvil ---
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
-
-            function toggleMenu() {
-                const isHidden = mobileMenu.classList.contains('hidden');
-                if (isHidden) {
-                    mobileMenu.classList.remove('hidden');
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-xmark');
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    menuIcon.classList.remove('fa-xmark');
-                    menuIcon.classList.add('fa-bars');
-                }
-            }
-
-            mobileMenuBtn.addEventListener('click', toggleMenu);
-
-            // Cerrar menú al hacer clic en un enlace
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    menuIcon.classList.remove('fa-xmark');
-                    menuIcon.classList.add('fa-bars');
-                });
-            });
-
-            // --- 2. Lógica del Checklist Interactivo ---
             const checkboxes = document.querySelectorAll('.habit-checkbox');
             const progressBar = document.getElementById('progress-bar');
             const progressPercentage = document.getElementById('progress-percentage');
-            const progressMessage = document.getElementById('progress-message');
-            const resetBtn = document.getElementById('reset-habits-btn');
-            const totalHabits = checkboxes.length;
-
-            // Cargar progreso guardado si existe
-            try {
-                const savedHabits = JSON.parse(localStorage.getItem('ecoConcienciaHabits')) || [];
-                checkboxes.forEach(cb => {
-                    if (savedHabits.includes(cb.dataset.habit)) {
-                        cb.checked = true;
-                    }
-                });
-            } catch (e) {
-                // Ignorar si localStorage no está disponible en el entorno
-            }
 
             function updateProgress() {
-                const checkedBoxes = Array.from(checkboxes).filter(cb => cb.checked);
-                const count = checkedBoxes.length;
-                const percentage = Math.round((count / totalHabits) * 100);
-
-                // Actualizar barra y texto
-                progressBar.style.width = `${percentage}%`;
-                progressPercentage.textContent = `${percentage}%`;
-
-                // Mensaje motivacional dinámico
-                if (count === 0) {
-                    progressMessage.textContent = '¡Selecciona tu primer hábito para comenzar!';
-                } else if (count < totalHabits / 2) {
-                    progressMessage.textContent = '¡Buen comienzo! Cada pequeña acción suma.';
-                } else if (count < totalHabits) {
-                    progressMessage.textContent = '¡Excelente progreso! Estás marcando una gran diferencia.';
-                } else {
-                    progressMessage.textContent = '¡Felicidades! Eres un verdadero guardián del planeta.';
-                }
-
-                // Guardar estado
-                try {
-                    const activeIds = checkedBoxes.map(cb => cb.dataset.habit);
-                    localStorage.setItem('ecoConcienciaHabits', JSON.stringify(activeIds));
-                } catch (e) {}
+                const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+                const percent = Math.round((checked / checkboxes.length) * 100);
+                progressBar.style.width = `${percent}%`;
+                progressPercentage.textContent = `${percent}%`;
             }
 
-            checkboxes.forEach(cb => {
-                cb.addEventListener('change', updateProgress);
-            });
-
-            resetBtn.addEventListener('click', () => {
-                checkboxes.forEach(cb => cb.checked = false);
-                updateProgress();
-            });
-
-            // Inicializar progreso al cargar
-            updateProgress();
+            checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
         });
     </script>
 </body>
 </html>
-```
